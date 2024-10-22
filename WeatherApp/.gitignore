@@ -1,0 +1,12 @@
+# ASP.NET Core
+bin/
+obj/
+wwwroot/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.DS_Store
+*.log
+**/node_modules/

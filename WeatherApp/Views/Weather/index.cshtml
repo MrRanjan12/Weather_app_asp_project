@@ -1,0 +1,18 @@
+@model WeatherApp.Models.WeatherData
+
+<h2>Weather Information</h2>
+
+<form asp-controller="Weather" asp-action="GetWeather" method="post">
+    <input type="text" name="city" placeholder="Enter city" required />
+    <button type="submit">Get Weather</button>
+</form>
+
+@if (Model != null)
+{
+    <div>
+        <h3>Weather in @Model.Name</h3> <!-- Assuming your model has a Name property for the city -->
+        <p>Temperature: @(Model.Main.Temp - 273.15)°C</p> <!-- Convert from Kelvin to Celsius -->
+        <p>Description: @Model.Weather[0].Description</p>
+        @* <img src="https://openweathermap.org/img/wn/@(Model.Weather[0].Icon)@2x.png" alt="Weather icon" /> *@
+    </div>
+}
